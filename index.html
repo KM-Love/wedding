@@ -207,7 +207,7 @@
         </div>
     </section>
 
-    <!-- 出席回函 (RSVP) -->
+    <!-- 出席回函 (RSVP - 莫蘭迪美學自訂表單) -->
     <section id="rsvp" class="py-24 bg-morandi-sand/30 px-6">
         <div class="max-w-2xl mx-auto">
             <div class="text-center mb-16">
@@ -216,7 +216,7 @@
                 <p class="text-sm text-morandi-muted">請於 2026年 12月 31日 前回覆，以利安排席次。</p>
             </div>
 
-            <!-- 5. 隱藏式 Iframe 提交技術 -->
+            <!-- 隱藏式 Iframe 提交技術 -->
             <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { showSuccessMessage(); }"></iframe>
 
             <form id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdneWOj9jStPRCa2OJKyux9P3ie7vWbKvJxX63rwo4vch0A-w/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;" class="glass-card p-8 md:p-10 rounded-2xl space-y-6 border border-morandi-sand">
@@ -226,7 +226,7 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         姓名 <span class="text-morandi-dark font-sans font-medium">NAME</span> <span class="text-rose-400">*</span>
                     </label>
-                    <input type="text" name="entry.123456789" required placeholder="請輸入您的姓名" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <input type="text" name="entry.169116757" required placeholder="請輸入您的姓名" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                 </div>
 
                 <!-- 電話 PHONE -->
@@ -234,7 +234,7 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         電話 <span class="text-morandi-dark font-sans font-medium">PHONE</span> <span class="text-rose-400">*</span>
                     </label>
-                    <input type="tel" name="entry.987654321" required placeholder="0912-345-678" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <input type="tel" name="entry.1228227655" required placeholder="0912-345-678" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                 </div>
 
                 <!-- 與新人的關係 RELATIONSHIP -->
@@ -242,7 +242,7 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         與新人的關係 <span class="text-morandi-dark font-sans font-medium">RELATIONSHIP</span> <span class="text-rose-400">*</span>
                     </label>
-                    <select name="entry.555555555" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <select name="entry.2069752535" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                         <option value="" disabled selected>請選擇您與新人的關係</option>
                         <option value="天霖的親戚">天霖的親戚</option>
                         <option value="天霖的同學">天霖的同學</option>
@@ -261,7 +261,7 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         是否會出席婚宴 <span class="text-morandi-dark font-sans font-medium">ATTENDANCE</span> <span class="text-rose-400">*</span>
                     </label>
-                    <select id="attendance-select" name="entry.666666666" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <select id="attendance-select" name="entry.1709403845" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                         <option value="" disabled selected>請選擇出席意願</option>
                         <option value="出席，絕對到場！">出席，絕對到場！</option>
                         <option value="無法出席，祝你們幸福美滿！">無法出席，祝你們幸福美滿！</option>
@@ -274,7 +274,7 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         是否需要寄送喜帖 <span class="text-morandi-dark font-sans font-medium">INVITATION TYPE</span> <span class="text-rose-400">*</span>
                     </label>
-                    <select id="invitation-select" name="entry.777777777" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <select id="invitation-select" name="entry.1203099905" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                         <option value="" disabled selected>請選擇喜帖需求</option>
                         <option value="需要，請寄「電子喜帖」給我">需要，請寄「電子喜帖」給我</option>
                         <option value="需要，請寄「紙本喜帖」給我">需要，請寄「紙本喜帖」給我</option>
@@ -288,7 +288,7 @@
                         <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                             電子郵件 <span class="text-morandi-dark font-sans font-medium">EMAIL</span> <span class="text-rose-400">*</span>
                         </label>
-                        <input type="email" id="email-input" name="entry.888888888" placeholder="請輸入您的 Email 以接收電子喜帖" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                        <input type="email" id="email-input" name="entry.1983058869" placeholder="請輸入您的 Email 以接收電子喜帖" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                     </div>
                 </div>
 
@@ -298,28 +298,27 @@
                         <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                             收件地址 <span class="text-morandi-dark font-sans font-medium">MAILING ADDRESS</span> <span class="text-rose-400">*</span>
                         </label>
-                        <input type="text" id="address-input" name="entry.999999999" placeholder="請輸入紙本喜帖收件地址（含郵遞區號）" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                        <input type="text" id="address-input" name="entry.1884485542" placeholder="請輸入紙本喜帖收件地址（含郵遞區號）" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                     </div>
                 </div>
 
-                <!-- 共幾個人出席 TOTAL GUESTS (智慧連動：出席才填寫) -->
+                <!-- 共幾個人出席 TOTAL GUESTS -->
                 <div id="guests-count-container" class="space-y-6 hidden">
                     <div>
                         <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                             共幾個人出席 <span class="text-morandi-dark font-sans font-medium">TOTAL GUESTS</span> <span class="text-rose-400">*</span>
                         </label>
-                        <input type="number" id="attendees-count" name="entry.111111111" min="1" max="10" placeholder="請填寫總出席人數（包含您自己）" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                        <input type="number" id="attendees-count" name="entry.1506456075" min="1" max="10" placeholder="請填寫總出席人數（包含您自己）" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                     </div>
                 </div>
 
-                <!-- 智能表單邏輯：只有當有填寫出席人數大於 0 時才顯示兒童椅選項 -->
+                <!-- 兒童椅選項 -->
                 <div id="conditional-fields" class="space-y-6 hidden pt-4 border-t border-morandi-sand transition-all duration-300">
-                    <!-- 是否需要兒童椅 HIGHCHAIR NEEDED -->
                     <div>
                         <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                             是否需要兒童椅 <span class="text-morandi-dark font-sans font-medium">HIGHCHAIR NEEDED</span>
                         </label>
-                        <select name="entry.333333333" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                        <select name="entry.1223933519" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                             <option value="不需要">不需要</option>
                             <option value="1張">1張</option>
                             <option value="2張">2張</option>
@@ -332,7 +331,7 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         給新人的祝福 <span class="text-morandi-dark font-sans font-medium">WISHES</span>
                     </label>
-                    <textarea name="entry.444444444" rows="3" placeholder="留下您的祝福語..." class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors"></textarea>
+                    <textarea name="entry.1260843236" rows="3" placeholder="留下您的祝福語..." class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors"></textarea>
                 </div>
 
                 <button type="submit" class="w-full py-4 bg-morandi-warm text-white rounded-xl font-en tracking-widest uppercase text-sm hover:bg-[#c29263] transition-colors shadow-md">
@@ -465,4 +464,3 @@
     </script>
 </body>
 </html>
-
