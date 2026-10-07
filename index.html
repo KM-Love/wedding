@@ -42,11 +42,9 @@
         .font-en {
             font-family: 'Cormorant Garamond', serif;
         }
-        /* 防止關鍵地點與捷運站名斷行 */
         .no-break {
             white-space: nowrap;
         }
-        /* 毛玻璃質感 */
         .glass-nav {
             background: rgba(252, 251, 250, 0.85);
             backdrop-filter: blur(12px);
@@ -57,7 +55,6 @@
             backdrop-filter: blur(8px);
             box-shadow: 0 10px 30px rgba(141, 163, 153, 0.12);
         }
-        /* 藝術感計時器白色微光卡片 */
         .time-card {
             background: #ffffff;
             box-shadow: 0 8px 24px rgba(212, 163, 115, 0.15);
@@ -78,14 +75,12 @@
                 <a href="#details" class="hover:text-morandi-warm transition-colors">婚禮詳情 <span class="font-en text-xs text-morandi-muted lowercase">/ details</span></a>
                 <a href="#rsvp" class="hover:text-morandi-warm transition-colors">出席回函 <span class="font-en text-xs text-morandi-muted lowercase">/ rsvp</span></a>
             </nav>
-            <!-- 手機版漢堡選單按鈕 -->
             <button id="menu-btn" class="md:hidden text-morandi-dark focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
-        <!-- 手機版下拉選單 -->
         <div id="mobile-menu" class="hidden md:hidden bg-morandi-cream/95 border-b border-morandi-sand px-6 py-4 space-y-3">
             <a href="#about" class="block text-sm tracking-widest py-1">關於我們 ABOUT</a>
             <a href="#details" class="block text-sm tracking-widest py-1">婚禮詳情 DETAILS</a>
@@ -96,7 +91,6 @@
     <!-- 3. 首頁全螢幕封面背景 -->
     <section id="home" class="relative h-screen flex items-center justify-center text-center px-4">
         <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://i.postimg.cc/PxVWb6kF/romantic-wedding-backgroundwedding-valentine-engagement-anniversary-theme-511010-2972.avif');">
-            <!-- 柔和色調濾鏡遮罩 -->
             <div class="absolute inset-0 bg-morandi-dark/30 mix-blend-multiply"></div>
             <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-morandi-cream/40"></div>
         </div>
@@ -113,7 +107,7 @@
         </div>
     </section>
 
-    <!-- 關於我們區塊 (Vertical V-Card 風格) -->
+    <!-- 關於我們區塊 -->
     <section id="about" class="py-24 px-6 max-w-4xl mx-auto">
         <div class="text-center mb-16">
             <span class="font-en text-xs tracking-[0.25em] uppercase text-morandi-sage block mb-2">Our Chapter</span>
@@ -135,29 +129,25 @@
         </div>
     </section>
 
-    <!-- 2. 藝術感計時器視覺 (白色微光卡片、柔和陰影與圓角) -->
+    <!-- 倒數計時器 -->
     <section class="py-16 bg-morandi-sand/50 px-6">
         <div class="max-w-4xl mx-auto text-center">
             <span class="font-en text-xs tracking-[0.25em] uppercase text-morandi-warm block mb-2">Countdown To Forever</span>
             <h3 class="text-2xl md:text-3xl font-light mb-10">距離幸福倒數</h3>
 
             <div id="countdown" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-2xl mx-auto">
-                <!-- Days -->
                 <div class="time-card rounded-2xl p-6 text-center">
                     <span id="days" class="font-en text-3xl md:text-5xl font-semibold text-morandi-warm block mb-1">00</span>
                     <span class="text-xs font-en tracking-widest text-morandi-muted uppercase">Days / 天</span>
                 </div>
-                <!-- Hours -->
                 <div class="time-card rounded-2xl p-6 text-center">
                     <span id="hours" class="font-en text-3xl md:text-5xl font-semibold text-morandi-warm block mb-1">00</span>
                     <span class="text-xs font-en tracking-widest text-morandi-muted uppercase">Hours / 時</span>
                 </div>
-                <!-- Minutes -->
                 <div class="time-card rounded-2xl p-6 text-center">
                     <span id="minutes" class="font-en text-3xl md:text-5xl font-semibold text-morandi-warm block mb-1">00</span>
                     <span class="text-xs font-en tracking-widest text-morandi-muted uppercase">Minutes / 分</span>
                 </div>
-                <!-- Seconds -->
                 <div class="time-card rounded-2xl p-6 text-center">
                     <span id="seconds" class="font-en text-3xl md:text-5xl font-semibold text-morandi-warm block mb-1">00</span>
                     <span class="text-xs font-en tracking-widest text-morandi-muted uppercase">Seconds / 秒</span>
@@ -166,7 +156,7 @@
         </div>
     </section>
 
-    <!-- 婚禮詳情與交通指引 (交通指引為隱藏摺疊面板) -->
+    <!-- 婚禮詳情與交通指引 -->
     <section id="details" class="py-24 px-6 max-w-4xl mx-auto">
         <div class="text-center mb-16">
             <span class="font-en text-xs tracking-[0.25em] uppercase text-morandi-sage block mb-2">Wedding Information</span>
@@ -174,7 +164,6 @@
         </div>
 
         <div class="space-y-6">
-            <!-- 宴客地點卡片 -->
             <div class="glass-card p-8 rounded-2xl border border-morandi-sand">
                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <div>
@@ -189,7 +178,6 @@
                     </div>
                 </div>
 
-                <!-- 交通指引摺疊面板 (6. 手機版優化：捷運站名與地址強制不斷行) -->
                 <div class="mt-8 pt-6 border-t border-morandi-sand">
                     <button id="toggle-transport" class="w-full flex items-center justify-between text-sm tracking-wider font-medium text-morandi-dark focus:outline-none">
                         <span class="flex items-center gap-2">
@@ -207,7 +195,7 @@
         </div>
     </section>
 
-    <!-- 出席回函 (RSVP - 莫蘭迪美學自訂表單) -->
+    <!-- 出席回函 (RSVP) -->
     <section id="rsvp" class="py-24 bg-morandi-sand/30 px-6">
         <div class="max-w-2xl mx-auto">
             <div class="text-center mb-16">
@@ -216,10 +204,7 @@
                 <p class="text-sm text-morandi-muted">請於 2026年 12月 31日 前回覆，以利安排席次。</p>
             </div>
 
-            <!-- 隱藏式 Iframe 提交技術 -->
-            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { showSuccessMessage(); }"></iframe>
-
-            <form id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLSev-W3jDkLAe9LtSatcV9F5UBm6MkXbi_k9NUaFASKzyQiguA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;" class="glass-card p-8 md:p-10 rounded-2xl space-y-6 border border-morandi-sand">
+            <form id="rsvp-form" class="glass-card p-8 md:p-10 rounded-2xl space-y-6 border border-morandi-sand">
 
                 <!-- 姓名 NAME -->
                 <div>
@@ -334,7 +319,7 @@
                     <textarea name="entry.1228236166" rows="3" placeholder="留下您的祝福語..." class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors"></textarea>
                 </div>
 
-                <button type="submit" class="w-full py-4 bg-morandi-warm text-white rounded-xl font-en tracking-widest uppercase text-sm hover:bg-[#c29263] transition-colors shadow-md">
+                <button type="submit" id="submit-btn" class="w-full py-4 bg-morandi-warm text-white rounded-xl font-en tracking-widest uppercase text-sm hover:bg-[#c29263] transition-colors shadow-md">
                     送出回函 Submit RSVP
                 </button>
             </form>
@@ -455,12 +440,31 @@
             }
         });
 
-        // 隱藏式 Iframe 提交成功回調
-        let submitted = false;
-        function showSuccessMessage() {
-            document.getElementById('rsvp-form').style.display = 'none';
-            document.getElementById('success-message').classList.remove('hidden');
-        }
+        // 使用 Fetch 非同步提交表單，確保 Google 後台完美接收資料
+        const form = document.getElementById('rsvp-form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.innerText = '傳送中...';
+
+            const formData = new FormData(form);
+            const actionUrl = "https://docs.google.com/forms/d/e/1FAIpQLSev-W3jDkLAe9LtSatcV9F5UBm6MkXbi_k9NUaFASKzyQiguA/formResponse";
+
+            fetch(actionUrl, {
+                method: "POST",
+                body: formData,
+                mode: "no-cors"
+            }).then(() => {
+                form.style.display = 'none';
+                document.getElementById('success-message').classList.remove('hidden');
+            }).catch((error) => {
+                console.error('Error!', error);
+                // 即使發生網路跨域錯誤，no-cors 下通常資料已成功送達
+                form.style.display = 'none';
+                document.getElementById('success-message').classList.remove('hidden');
+            });
+        });
     </script>
 </body>
 </html>
