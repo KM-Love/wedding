@@ -211,7 +211,7 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         姓名 <span class="text-morandi-dark font-sans font-medium">NAME</span> <span class="text-rose-400">*</span>
                     </label>
-                    <input type="text" name="entry.1147980287" required placeholder="請輸入您的姓名" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <input type="text" name="name" required placeholder="請輸入您的姓名" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                 </div>
 
                 <!-- 電話 PHONE -->
@@ -219,7 +219,7 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         電話 <span class="text-morandi-dark font-sans font-medium">PHONE</span> <span class="text-rose-400">*</span>
                     </label>
-                    <input type="tel" name="entry.1017830303" required placeholder="0912-345-678" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <input type="tel" name="phone" required placeholder="0912-345-678" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                 </div>
 
                 <!-- 與新人的關係 RELATIONSHIP -->
@@ -227,7 +227,7 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         與新人的關係 <span class="text-morandi-dark font-sans font-medium">RELATIONSHIP</span> <span class="text-rose-400">*</span>
                     </label>
-                    <select name="entry.839810860" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <select name="relationship" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                         <option value="" disabled selected>請選擇您與新人的關係</option>
                         <option value="天霖的親戚">天霖的親戚</option>
                         <option value="天霖的同學">天霖的同學</option>
@@ -246,7 +246,7 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         是否會出席婚宴 <span class="text-morandi-dark font-sans font-medium">ATTENDANCE</span> <span class="text-rose-400">*</span>
                     </label>
-                    <select id="attendance-select" name="entry.28929315" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <select id="attendance-select" name="attendance" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                         <option value="" disabled selected>請選擇出席意願</option>
                         <option value="出席，絕對到場！">出席，絕對到場！</option>
                         <option value="無法出席，祝你們幸福美滿！">無法出席，祝你們幸福美滿！</option>
@@ -259,7 +259,7 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         是否需要寄送喜帖 <span class="text-morandi-dark font-sans font-medium">INVITATION TYPE</span> <span class="text-rose-400">*</span>
                     </label>
-                    <select id="invitation-select" name="entry.1018593853" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <select id="invitation-select" name="invitation_type" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                         <option value="" disabled selected>請選擇喜帖需求</option>
                         <option value="需要，請寄「電子喜帖」給我">需要，請寄「電子喜帖」給我</option>
                         <option value="需要，請寄「紙本喜帖」給我">需要，請寄「紙本喜帖」給我</option>
@@ -273,7 +273,7 @@
                         <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                             電子郵件 <span class="text-morandi-dark font-sans font-medium">EMAIL</span> <span class="text-rose-400">*</span>
                         </label>
-                        <input type="email" id="email-input" name="entry.2120017124" placeholder="請輸入您的 Email 以接收電子喜帖" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                        <input type="email" id="email-input" name="email" placeholder="請輸入您的 Email 以接收電子喜帖" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                     </div>
                 </div>
 
@@ -283,7 +283,7 @@
                         <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                             收件地址 <span class="text-morandi-dark font-sans font-medium">MAILING ADDRESS</span> <span class="text-rose-400">*</span>
                         </label>
-                        <input type="text" id="address-input" name="entry.1432770281" placeholder="請輸入紙本喜帖收件地址（含郵遞區號）" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                        <input type="text" id="address-input" name="address" placeholder="請輸入紙本喜帖收件地址（含郵遞區號）" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                     </div>
                 </div>
 
@@ -293,7 +293,7 @@
                         <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                             共幾個人出席 <span class="text-morandi-dark font-sans font-medium">TOTAL GUESTS</span> <span class="text-rose-400">*</span>
                         </label>
-                        <input type="number" id="attendees-count" name="entry.150792372" min="1" max="10" placeholder="請填寫總出席人數（包含您自己）" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                        <input type="number" id="attendees-count" name="guests" min="1" max="10" placeholder="請填寫總出席人數（包含您自己）" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                     </div>
                 </div>
 
@@ -303,7 +303,7 @@
                         <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                             是否需要兒童椅 <span class="text-morandi-dark font-sans font-medium">HIGHCHAIR NEEDED</span>
                         </label>
-                        <select name="entry.809228514" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                        <select name="highchair" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                             <option value="不需要">不需要</option>
                             <option value="1張">1張</option>
                             <option value="2張">2張</option>
@@ -316,7 +316,7 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         給新人的祝福 <span class="text-morandi-dark font-sans font-medium">WISHES</span>
                     </label>
-                    <textarea name="entry.1228236166" rows="3" placeholder="留下您的祝福語..." class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors"></textarea>
+                    <textarea name="wishes" rows="3" placeholder="留下您的祝福語..." class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors"></textarea>
                 </div>
 
                 <button type="submit" id="submit-btn" class="w-full py-4 bg-morandi-warm text-white rounded-xl font-en tracking-widest uppercase text-sm hover:bg-[#c29263] transition-colors shadow-md">
@@ -440,7 +440,7 @@
             }
         });
 
-        // 使用 Fetch 非同步提交表單，確保 Google 後台完美接收資料
+        // 使用 Apps Script 網頁應用程式提交表單
         const form = document.getElementById('rsvp-form');
         form.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -449,9 +449,9 @@
             submitBtn.innerText = '傳送中...';
 
             const formData = new FormData(form);
-            const actionUrl = "https://docs.google.com/forms/d/e/1FAIpQLSev-W3jDkLAe9LtSatcV9F5UBm6MkXbi_k9NUaFASKzyQiguA/formResponse";
+            const scriptUrl = "https://script.google.com/macros/s/AKfycbzqjYHbQjaq6wVc08fZEnvjI7l-Z4qSUykioBLFpaVwI1aE6noz-6Q8M7uNKr_Q7J8i/exec";
 
-            fetch(actionUrl, {
+            fetch(scriptUrl, {
                 method: "POST",
                 body: formData,
                 mode: "no-cors"
@@ -460,7 +460,6 @@
                 document.getElementById('success-message').classList.remove('hidden');
             }).catch((error) => {
                 console.error('Error!', error);
-                // 即使發生網路跨域錯誤，no-cors 下通常資料已成功送達
                 form.style.display = 'none';
                 document.getElementById('success-message').classList.remove('hidden');
             });
