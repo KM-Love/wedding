@@ -273,12 +273,32 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         是否需要寄送喜帖 <span class="text-morandi-dark font-sans font-medium">INVITATION TYPE</span> <span class="text-rose-400">*</span>
                     </label>
-                    <select name="entry.777777777" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <select id="invitation-select" name="entry.777777777" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                         <option value="" disabled selected>請選擇喜帖需求</option>
                         <option value="需要，請寄「電子喜帖」給我">需要，請寄「電子喜帖」給我</option>
                         <option value="需要，請寄「紙本喜帖」給我">需要，請寄「紙本喜帖」給我</option>
                         <option value="不用唷，我愛地球，婚禮相關資訊我知道了">不用唷，我愛地球，婚禮相關資訊我知道了</option>
                     </select>
+                </div>
+
+                <!-- 動態展開：電子喜帖 Email 欄位 -->
+                <div id="email-container" class="space-y-6 hidden">
+                    <div>
+                        <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
+                            電子郵件 <span class="text-morandi-dark font-sans font-medium">EMAIL</span> <span class="text-rose-400">*</span>
+                        </label>
+                        <input type="email" id="email-input" name="entry.888888888" placeholder="請輸入您的 Email 以接收電子喜帖" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    </div>
+                </div>
+
+                <!-- 動態展開：紙本喜帖 地址 欄位 -->
+                <div id="address-container" class="space-y-6 hidden">
+                    <div>
+                        <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
+                            收件地址 <span class="text-morandi-dark font-sans font-medium">MAILING ADDRESS</span> <span class="text-rose-400">*</span>
+                        </label>
+                        <input type="text" id="address-input" name="entry.999999999" placeholder="請輸入紙本喜帖收件地址（含郵遞區號）" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    </div>
                 </div>
 
                 <!-- 共幾個人出席 TOTAL GUESTS (智慧連動：出席才填寫) -->
@@ -374,19 +394,18 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // 智能表單連動邏輯
+        // 智能表單連動邏輯：出席意願
         const attendanceSelect = document.getElementById('attendance-select');
         const guestsContainer = document.getElementById('guests-count-container');
         const attendeesInput = document.getElementById('attendees-count');
         const conditionalFields = document.getElementById('conditional-fields');
 
-        // 當「是否會出席婚宴」改變時
         attendanceSelect.addEventListener('change', (e) => {
             const val = e.target.value;
             if (val === '出席，絕對到場！') {
                 guestsContainer.classList.remove('hidden');
                 attendeesInput.required = true;
-                attendeesInput.value = '1'; // 預設 1 人
+                attendeesInput.value = '1';
                 conditionalFields.classList.remove('hidden');
             } else {
                 guestsContainer.classList.add('hidden');
@@ -396,13 +415,43 @@
             }
         });
 
-        // 當「共幾個人出席」數字改變時，連動檢查兒童椅
         attendeesInput.addEventListener('input', (e) => {
             const val = parseInt(e.target.value) || 0;
             if (val > 0) {
                 conditionalFields.classList.remove('hidden');
             } else {
                 conditionalFields.classList.add('hidden');
+            }
+        });
+
+        // 智能表單連動邏輯：喜帖寄送選擇
+        const invitationSelect = document.getElementById('invitation-select');
+        const emailContainer = document.getElementById('email-container');
+        const emailInput = document.getElementById('email-input');
+        const addressContainer = document.getElementById('address-container');
+        const addressInput = document.getElementById('address-input');
+
+        invitationSelect.addEventListener('change', (e) => {
+            const val = e.target.value;
+            if (val === '需要，請寄「電子喜帖」給我') {
+                emailContainer.classList.remove('hidden');
+                emailInput.required = true;
+                addressContainer.classList.add('hidden');
+                addressInput.required = false;
+                addressInput.value = '';
+            } else if (val === '需要，請寄「紙本喜帖」給我') {
+                addressContainer.classList.remove('hidden');
+                addressInput.required = true;
+                emailContainer.classList.add('hidden');
+                emailInput.required = false;
+                emailInput.value = '';
+            } else {
+                emailContainer.classList.add('hidden');
+                emailInput.required = false;
+                emailInput.value = '';
+                addressContainer.classList.add('hidden');
+                addressInput.required = false;
+                addressInput.value = '';
             }
         });
 
