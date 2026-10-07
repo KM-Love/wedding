@@ -140,7 +140,7 @@
         <div class="max-w-4xl mx-auto text-center">
             <span class="font-en text-xs tracking-[0.25em] uppercase text-morandi-warm block mb-2">Countdown To Forever</span>
             <h3 class="text-2xl md:text-3xl font-light mb-10">距離幸福倒數</h3>
-            
+
             <div id="countdown" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-2xl mx-auto">
                 <!-- Days -->
                 <div class="time-card rounded-2xl p-6 text-center">
@@ -199,8 +199,9 @@
                         <svg id="transport-icon" class="w-5 h-5 transform transition-transform duration-300 text-morandi-warm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div id="transport-content" class="hidden mt-4 space-y-3 text-sm text-morandi-muted bg-morandi-cream/60 p-6 rounded-xl">
-                        <p><strong>捷運搭乘：</strong>搭乘<span class="no-break">機場捷運A4新莊副都心站2號出口機場捷運A4新莊副都心站2號出口</span> (步行約3分鐘) </span>。</p>
+                        <p><strong>捷運搭乘：</strong>搭乘<span class="no-break">機場捷運A4新莊副都心站2號出口</span> (步行約3分鐘)。</p>
                         <p><strong>自行開車：</strong>新莊典華B2停車場</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -215,12 +216,12 @@
                 <p class="text-sm text-morandi-muted">請於 2026年 12月 31日 前回覆，以利安排席次。</p>
             </div>
 
-            <!-- 5. 隱藏式 Iframe 提交技術 (已精準提取表單 ID 且輸入框保持乾淨空值) -->
+            <!-- 5. 隱藏式 Iframe 提交技術 -->
             <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { showSuccessMessage(); }"></iframe>
 
             <form id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdE8mSLUofDTrVayKrtfASFPwbEhbk0dFy5Aw86dShCaoxYaw/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;" class="glass-card p-8 md:p-10 rounded-2xl space-y-6 border border-morandi-sand">
-                
-                <!-- 4. 中英雙語標籤：姓名 -->
+
+                <!-- 姓名 NAME -->
                 <div>
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         姓名 <span class="text-morandi-dark font-sans font-medium">NAME</span> <span class="text-rose-400">*</span>
@@ -228,7 +229,7 @@
                     <input type="text" name="entry.123456789" required placeholder="請輸入您的姓名" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                 </div>
 
-                <!-- 4. 中英雙語標籤：電話 -->
+                <!-- 電話 PHONE -->
                 <div>
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         電話 <span class="text-morandi-dark font-sans font-medium">PHONE</span> <span class="text-rose-400">*</span>
@@ -236,23 +237,50 @@
                     <input type="tel" name="entry.987654321" required placeholder="0912-345-678" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                 </div>
 
-                <!-- 4. 中英雙語標籤：參加午宴人數 (純中文下拉選單) -->
+                <!-- 與新人的關係 RELATIONSHIP -->
                 <div>
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
-                        參加午宴人數 <span class="text-morandi-dark font-sans font-medium">ATTENDING GUESTS</span> <span class="text-rose-400">*</span>
+                        與新人的關係 <span class="text-morandi-dark font-sans font-medium">RELATIONSHIP</span> <span class="text-rose-400">*</span>
                     </label>
-                    <select id="attendees-count" name="entry.111111111" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
-                        <option value="0">不克出席 (0位)</option>
-                        <option value="1">1位</option>
-                        <option value="2">2位</option>
-                        <option value="3">3位</option>
-                        <option value="4">4位</option>
+                    <select name="entry.555555555" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                        <option value="" disabled selected>請選擇您與新人的關係</option>
+                        <option value="天霖的親戚">天霖的親戚</option>
+                        <option value="天霖的同學">天霖的同學</option>
+                        <option value="天霖的同事">天霖的同事</option>
+                        <option value="莉庭的朋友">莉庭的朋友</option>
+                        <option value="莉庭的親戚">莉庭的親戚</option>
+                        <option value="莉庭的同學">莉庭的同學</option>
+                        <option value="莉庭的同事">莉庭的同事</option>
+                        <option value="莉庭的教會朋友">莉庭的教會朋友</option>
                     </select>
                 </div>
 
-                <!-- 7. 智能表單邏輯：只有大於 0 時才顯示 -->
+                <!-- 是否會出席婚宴 ATTENDANCE -->
+                <div>
+                    <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
+                        是否會出席婚宴 <span class="text-morandi-dark font-sans font-medium">ATTENDANCE</span> <span class="text-rose-400">*</span>
+                    </label>
+                    <select id="attendance-select" name="entry.666666666" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                        <option value="" disabled selected>請選擇出席意願</option>
+                        <option value="出席，絕對到場！">出席，絕對到場！</option>
+                        <option value="無法出席，祝你們幸福美滿！">無法出席，祝你們幸福美滿！</option>
+                        <option value="禮到人不到">禮到人不到</option>
+                    </select>
+                </div>
+
+                <!-- 共幾個人出席 TOTAL GUESTS (智慧連動：出席才填寫) -->
+                <div id="guests-count-container" class="space-y-6 hidden">
+                    <div>
+                        <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
+                            共幾個人出席 <span class="text-morandi-dark font-sans font-medium">TOTAL GUESTS</span> <span class="text-rose-400">*</span>
+                        </label>
+                        <input type="number" id="attendees-count" name="entry.111111111" min="1" max="10" placeholder="請填寫總出席人數（包含您自己）" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    </div>
+                </div>
+
+                <!-- 智能表單邏輯：只有當有填寫出席人數大於 0 時才顯示飲食與兒童椅選項 -->
                 <div id="conditional-fields" class="space-y-6 hidden pt-4 border-t border-morandi-sand transition-all duration-300">
-                    <!-- 4. 中英雙語標籤：飲食需求 (純中文下拉選單) -->
+                    <!-- 飲食需求 DIETARY REQUIREMENTS -->
                     <div>
                         <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                             飲食需求 <span class="text-morandi-dark font-sans font-medium">DIETARY REQUIREMENTS</span>
@@ -263,7 +291,7 @@
                         </select>
                     </div>
 
-                    <!-- 4. 中英雙語標籤：是否需要兒童椅 (純中文下拉選單) -->
+                    <!-- 是否需要兒童椅 HIGHCHAIR NEEDED -->
                     <div>
                         <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                             是否需要兒童椅 <span class="text-morandi-dark font-sans font-medium">HIGHCHAIR NEEDED</span>
@@ -276,7 +304,7 @@
                     </div>
                 </div>
 
-                <!-- 4. 中英雙語標籤：祝福語 -->
+                <!-- 給新人的祝福 WISHES -->
                 <div>
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         給新人的祝福 <span class="text-morandi-dark font-sans font-medium">WISHES</span>
@@ -344,11 +372,31 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // 智能表單邏輯：參加午宴人數大於 0 時顯示飲食與兒童椅選項
-        const attendeesSelect = document.getElementById('attendees-count');
+        // 智能表單連動邏輯
+        const attendanceSelect = document.getElementById('attendance-select');
+        const guestsContainer = document.getElementById('guests-count-container');
+        const attendeesInput = document.getElementById('attendees-count');
         const conditionalFields = document.getElementById('conditional-fields');
-        attendeesSelect.addEventListener('change', (e) => {
-            const val = parseInt(e.target.value);
+
+        // 當「是否會出席婚宴」改變時
+        attendanceSelect.addEventListener('change', (e) => {
+            const val = e.target.value;
+            if (val === '出席，絕對到場！') {
+                guestsContainer.classList.remove('hidden');
+                attendeesInput.required = true;
+                attendeesInput.value = '1'; // 預設 1 人
+                conditionalFields.classList.remove('hidden');
+            } else {
+                guestsContainer.classList.add('hidden');
+                attendeesInput.required = false;
+                attendeesInput.value = '0';
+                conditionalFields.classList.add('hidden');
+            }
+        });
+
+        // 當「共幾個人出席」數字改變時，連動檢查飲食與兒童椅
+        attendeesInput.addEventListener('input', (e) => {
+            const val = parseInt(e.target.value) || 0;
             if (val > 0) {
                 conditionalFields.classList.remove('hidden');
             } else {
