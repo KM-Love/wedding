@@ -118,7 +118,7 @@
                 <div class="w-24 h-24 mx-auto rounded-full bg-morandi-sage/20 mb-6 flex items-center justify-center font-en text-2xl text-morandi-sage">K</div>
                 <h3 class="font-en text-xl font-semibold tracking-wider mb-2">Kevin</h3>
                 <p class="text-xs font-en text-morandi-warm tracking-widest uppercase mb-4">Groom / 郭天霖</p>
-                <p class="text-sm text-morandi-muted leading-relaxed">帶著工程師的嚴謹與溫柔，在每一個平凡的日子裡，給予最堅定且安穩的陪伴。</p>
+                <p class="text-sm text-morandi-muted leading-relaxed">帶著理工人的嚴謹與溫柔，在每一個平凡的日子裡，給予最堅定且安穩的陪伴。</p>
             </div>
             <div class="glass-card p-8 rounded-2xl border border-morandi-warm/20 text-center">
                 <div class="w-24 h-24 mx-auto rounded-full bg-morandi-warm/20 mb-6 flex items-center justify-center font-en text-2xl text-morandi-warm">M</div>
@@ -182,12 +182,12 @@
                     <button id="toggle-transport" class="w-full flex items-center justify-between text-sm tracking-wider font-medium text-morandi-dark focus:outline-none">
                         <span class="flex items-center gap-2">
                             <svg class="w-4 h-4 text-morandi-warm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            交通指引與停車資訊 / Transportation Guide（點我）
+                            交通指引與停車資訊 / Transportation Guide
                         </span>
                         <svg id="transport-icon" class="w-5 h-5 transform transition-transform duration-300 text-morandi-warm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div id="transport-content" class="hidden mt-4 space-y-3 text-sm text-morandi-muted bg-morandi-cream/60 p-6 rounded-xl">
-                        <p><strong>捷運搭乘：</strong><span class="no-break">機場捷運A4新莊副都心站2號出口</span> (步行約3分鐘)。</p>
+                        <p><strong>捷運搭乘：</strong>搭乘<span class="no-break">機場捷運A4新莊副都心站2號出口</span> (步行約3分鐘)。</p>
                         <p><strong>自行開車：</strong>新莊典華B2停車場</p>
                     </div>
                 </div>
@@ -201,7 +201,7 @@
             <div class="text-center mb-16">
                 <span class="font-en text-xs tracking-[0.25em] uppercase text-morandi-warm block mb-2">RSVP</span>
                 <h2 class="text-3xl md:text-4xl font-light tracking-wide mb-3">出席回函</h2>
-                <p class="text-sm text-morandi-muted">請於 2027年 1月 10日 前回覆，以利安排席次。</p>
+                <p class="text-sm text-morandi-muted">請於 2026年 12月 31日 前回覆，以利安排席次。</p>
             </div>
 
             <form id="rsvp-form" class="glass-card p-8 md:p-10 rounded-2xl space-y-6 border border-morandi-sand">
@@ -261,8 +261,8 @@
                     </label>
                     <select id="invitation-select" name="invitation_type" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                         <option value="" disabled selected>請選擇喜帖需求</option>
-                        <option value="請寄「電子喜帖」給我">請寄「電子喜帖」給我</option>
-                        <option value="請寄「紙本喜帖」給我">請寄「紙本喜帖」給我</option>
+                        <option value="需要，請寄「電子喜帖」給我">需要，請寄「電子喜帖」給我</option>
+                        <option value="需要，請寄「紙本喜帖」給我">需要，請寄「紙本喜帖」給我</option>
                         <option value="不用唷，我愛地球，婚禮相關資訊我知道了">不用唷，我愛地球，婚禮相關資訊我知道了</option>
                     </select>
                 </div>
@@ -449,7 +449,7 @@
             submitBtn.innerText = '傳送中...';
 
             const formData = new FormData(form);
-            const scriptUrl = "https://script.google.com/macros/s/AKfycbwVm8Ek8Gp81w_Plgsg26PmFEsEVDiON5FLbvOHV3yZUZuA23z9XNBe-l0XOp_AJGgK/exec";
+            const scriptUrl = "https://script.google.com/macros/s/AKfycbxvYtEmUs-4_o5vuoSy_o8VxEnw-U9jIpHams8LnFP06JQU9iDThO_Pjm4jAnnx5sc/exec";
 
             fetch(scriptUrl, {
                 method: "POST",
@@ -467,5 +467,4 @@
     </script>
 </body>
 </html>
-
 
