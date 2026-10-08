@@ -418,13 +418,13 @@
 
         invitationSelect.addEventListener('change', (e) => {
             const val = e.target.value;
-            if (val === '需要，請寄「電子喜帖」給我') {
+            if (val === '請寄「電子喜帖」給我') {
                 emailContainer.classList.remove('hidden');
                 emailInput.required = true;
                 addressContainer.classList.add('hidden');
                 addressInput.required = false;
                 addressInput.value = '';
-            } else if (val === '需要，請寄「紙本喜帖」給我') {
+            } else if (val === '請寄「紙本喜帖」給我') {
                 addressContainer.classList.remove('hidden');
                 addressInput.required = true;
                 emailContainer.classList.add('hidden');
