@@ -212,14 +212,14 @@
                 <p class="text-sm text-morandi-muted">請於 2026年 12月 31日 前回覆，以利安排席次。</p>
             </div>
 
-            <form id="rsvp-form" class="glass-card p-8 md:p-10 rounded-2xl space-y-6 border border-morandi-sand" novalidate>
+            <form id="rsvp-form" class="glass-card p-8 md:p-10 rounded-2xl space-y-6 border border-morandi-sand">
 
                 <!-- 姓名 NAME -->
                 <div>
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         姓名 <span class="text-morandi-dark font-sans font-medium">NAME</span> <span class="text-rose-400">*</span>
                     </label>
-                    <input type="text" name="name" placeholder="請輸入您的姓名" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <input type="text" id="name-input" name="name" placeholder="請輸入您的姓名" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                 </div>
 
                 <!-- 電話 PHONE -->
@@ -227,7 +227,7 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         電話 <span class="text-morandi-dark font-sans font-medium">PHONE</span> <span class="text-rose-400">*</span>
                     </label>
-                    <input type="tel" name="phone" placeholder="0912-345-678" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <input type="tel" id="phone-input" name="phone" placeholder="0912-345-678" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                 </div>
 
                 <!-- 與新人的關係 RELATIONSHIP -->
@@ -235,7 +235,7 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         與新人的關係 <span class="text-morandi-dark font-sans font-medium">RELATIONSHIP</span> <span class="text-rose-400">*</span>
                     </label>
-                    <select name="relationship" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <select id="relationship-select" name="relationship" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                         <option value="" disabled selected>請選擇您與新人的關係</option>
                         <option value="天霖的親戚">天霖的親戚</option>
                         <option value="天霖的同學">天霖的同學</option>
@@ -311,7 +311,7 @@
                         <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                             是否需要兒童椅 <span class="text-morandi-dark font-sans font-medium">HIGHCHAIR NEEDED</span>
                         </label>
-                        <select name="highchair" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                        <select id="highchair-select" name="highchair" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                             <option value="不需要">不需要</option>
                             <option value="1張">1張</option>
                             <option value="2張">2張</option>
@@ -324,10 +324,10 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         給新人的祝福 <span class="text-morandi-dark font-sans font-medium">WISHES</span>
                     </label>
-                    <textarea name="wishes" rows="3" placeholder="留下您的祝福語..." class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors"></textarea>
+                    <textarea id="wishes-input" name="wishes" rows="3" placeholder="留下您的祝福語..." class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors"></textarea>
                 </div>
 
-                <button type="submit" id="submit-btn" class="w-full py-4 bg-morandi-warm text-white rounded-xl font-en tracking-widest uppercase text-sm hover:bg-[#c29263] transition-colors shadow-md">
+                <button type="button" id="submit-btn" class="w-full py-4 bg-morandi-warm text-white rounded-xl font-en tracking-widest uppercase text-sm hover:bg-[#c29263] transition-colors shadow-md">
                     送出回函 Submit RSVP
                 </button>
             </form>
@@ -440,58 +440,63 @@
             }
         });
 
-        // 使用 Apps Script 網頁應用程式提交表單 (含親友友好的 JS 手動驗證)
-        const form = document.getElementById('rsvp-form');
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
+        // 按鈕點擊送出處理（徹底防堵手機版 JS 屬性衝突）
+        const submitBtn = document.getElementById('submit-btn');
+        submitBtn.addEventListener('click', function() {
+            try {
+                const name = document.getElementById('name-input').value.trim();
+                const phone = document.getElementById('phone-input').value.trim();
+                const relationship = document.getElementById('relationship-select').value;
+                const attendance = document.getElementById('attendance-select').value;
+                const invitationType = document.getElementById('invitation-select').value;
 
-            // 1. 手動檢查必填欄位，如果沒填會直接跳彈窗提示
-            const name = form.name.value.trim();
-            const phone = form.phone.value.trim();
-            const relationship = form.relationship.value;
-            const attendance = form.attendance.value;
-            const invitationType = form.invitation_type.value;
+                // 表單驗證
+                if (!name) { alert("請填寫您的姓名喔！"); return; }
+                if (!phone) { alert("請填寫您的電話喔！"); return; }
+                if (!relationship) { alert("請選擇您與新人的關係喔！"); return; }
+                if (!attendance) { alert("請選擇是否出席婚宴喔！"); return; }
+                if (!invitationType) { alert("請選擇喜帖需求喔！"); return; }
 
-            if (!name) { alert("請填寫您的姓名喔！"); return; }
-            if (!phone) { alert("請填寫您的電話喔！"); return; }
-            if (!relationship) { alert("請選擇您與新人的關係喔！"); return; }
-            if (!attendance) { alert("請選擇是否出席婚宴喔！"); return; }
-            if (!invitationType) { alert("請選擇喜帖需求喔！"); return; }
+                if (invitationType === '請寄「電子喜帖」給我' && !emailInput.value.trim()) {
+                    alert("請填寫接收電子喜帖的 Email 喔！");
+                    return;
+                }
+                if (invitationType === '請寄「紙本喜帖」給我' && !addressInput.value.trim()) {
+                    alert("請填寫紙本喜帖的收件地址喔！");
+                    return;
+                }
+                if (attendance === '出席，絕對到場！') {
+                    const guestsVal = attendeesInput.value;
+                    if (!guestsVal || parseInt(guestsVal) < 1) {
+                        alert("請填寫出席人數喔！");
+                        return;
+                    }
+                }
 
-            // 動態條件檢查
-            if (invitationType === '請寄「電子喜帖」給我' && !emailInput.value.trim()) {
-                alert("請填寫接收電子喜帖的 Email 喔！");
-                return;
+                // 鎖定按鈕顯示傳送中
+                submitBtn.disabled = true;
+                submitBtn.innerText = '傳送中...';
+
+                const rsvpForm = document.getElementById('rsvp-form');
+                const formData = new FormData(rsvpForm);
+                const scriptUrl = "https://script.google.com/macros/s/AKfycbxq2nx1hhlcG_4PS7Fq2VdoXY-m7IsL86ZfgzOTP8u3IoiMCSL23LU9OC6_pYkvkxc/exec";
+
+                fetch(scriptUrl, {
+                    method: "POST",
+                    body: formData,
+                    mode: "no-cors"
+                }).then(() => {
+                    rsvpForm.style.display = 'none';
+                    document.getElementById('success-message').classList.remove('hidden');
+                }).catch((error) => {
+                    console.error('Error!', error);
+                    rsvpForm.style.display = 'none';
+                    document.getElementById('success-message').classList.remove('hidden');
+                });
+
+            } catch (err) {
+                alert("傳送時發生錯誤：" + err.message);
             }
-            if (invitationType === '請寄「紙本喜帖」給我' && !addressInput.value.trim()) {
-                alert("請填寫紙本喜帖的收件地址喔！");
-                return;
-            }
-            if (attendance === '出席，絕對到場！' && (!attendeesInput.value || parseInt(attendeesInput.value) < 1)) {
-                alert("請填寫出席人數喔！");
-                return;
-            }
-
-            // 2. 驗證通過，執行送出
-            const submitBtn = document.getElementById('submit-btn');
-            submitBtn.disabled = true;
-            submitBtn.innerText = '傳送中...';
-
-            const formData = new FormData(form);
-            const scriptUrl = "https://script.google.com/macros/s/AKfycbxq2nx1hhlcG_4PS7Fq2VdoXY-m7IsL86ZfgzOTP8u3IoiMCSL23LU9OC6_pYkvkxc/exec";
-
-            fetch(scriptUrl, {
-                method: "POST",
-                body: formData,
-                mode: "no-cors"
-            }).then(() => {
-                form.style.display = 'none';
-                document.getElementById('success-message').classList.remove('hidden');
-            }).catch((error) => {
-                console.error('Error!', error);
-                form.style.display = 'none';
-                document.getElementById('success-message').classList.remove('hidden');
-            });
         });
     </script>
 </body>
