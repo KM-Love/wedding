@@ -121,7 +121,7 @@
                 <h3 class="font-en text-xl font-semibold tracking-wider mb-1">Kevin</h3>
                 <p class="text-xs font-en text-morandi-warm tracking-widest uppercase mb-2">Groom / 郭天霖</p>
                 <p class="text-xs tracking-widest text-morandi-sage font-medium mb-4">巨蟹座 ♋</p>
-                <p class="text-sm text-morandi-muted leading-relaxed">貼心愛家，最大的優點是很會選老婆。</p>
+                <p class="text-sm text-morandi-muted leading-relaxed mb-2">貼心愛家，最大的優點是很會選老婆。</p>
                 <p class="text-sm text-morandi-muted leading-relaxed">帶著工程師的嚴謹與溫柔，在每一個平凡的日子裡，給予最堅定且安穩的陪伴與偏愛。</p>
             </div>
             <div class="glass-card p-8 rounded-2xl border border-morandi-warm/20 text-center">
@@ -131,7 +131,7 @@
                 <h3 class="font-en text-xl font-semibold tracking-wider mb-1">Mila</h3>
                 <p class="text-xs font-en text-morandi-warm tracking-widest uppercase mb-2">Bride / 周莉庭</p>
                 <p class="text-xs tracking-widest text-morandi-warm font-medium mb-4">摩羯座 ♑</p>
-                <p class="text-sm text-morandi-muted leading-relaxed">細膩溫柔，溫柔婉約。</p>
+                <p class="text-sm text-morandi-muted leading-relaxed mb-2">細膩溫柔，溫柔婉約。</p>
                 <p class="text-sm text-morandi-muted leading-relaxed">用視覺設計的細膩與浪漫，將生命中最美好的溫柔，凝結成一幅永恆的畫面。</p>
             </div>
         </div>
@@ -187,7 +187,7 @@
                 </div>
 
                 <div class="mt-8 pt-6 border-t border-morandi-sand">
-                    <button id="toggle-transport" class="w-full flex items-center justify-between text-sm tracking-wider font-medium text-morandi-dark focus:outline-none">
+                    <button id="toggle-transport" type="button" class="w-full flex items-center justify-between text-sm tracking-wider font-medium text-morandi-dark focus:outline-none">
                         <span class="flex items-center gap-2">
                             <svg class="w-4 h-4 text-morandi-warm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                             交通指引與停車資訊 / Transportation Guide（點我）
@@ -209,17 +209,17 @@
             <div class="text-center mb-16">
                 <span class="font-en text-xs tracking-[0.25em] uppercase text-morandi-warm block mb-2">RSVP</span>
                 <h2 class="text-3xl md:text-4xl font-light tracking-wide mb-3">出席回函</h2>
-                <p class="text-sm text-morandi-muted">請於 2026年 1月 10日 前回覆，以利安排席次。</p>
+                <p class="text-sm text-morandi-muted">請於 2026年 12月 31日 前回覆，以利安排席次。</p>
             </div>
 
-            <form id="rsvp-form" class="glass-card p-8 md:p-10 rounded-2xl space-y-6 border border-morandi-sand">
+            <form id="rsvp-form" class="glass-card p-8 md:p-10 rounded-2xl space-y-6 border border-morandi-sand" novalidate>
 
                 <!-- 姓名 NAME -->
                 <div>
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         姓名 <span class="text-morandi-dark font-sans font-medium">NAME</span> <span class="text-rose-400">*</span>
                     </label>
-                    <input type="text" name="name" required placeholder="請輸入您的姓名" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <input type="text" name="name" placeholder="請輸入您的姓名" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                 </div>
 
                 <!-- 電話 PHONE -->
@@ -227,7 +227,7 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         電話 <span class="text-morandi-dark font-sans font-medium">PHONE</span> <span class="text-rose-400">*</span>
                     </label>
-                    <input type="tel" name="phone" required placeholder="0912-345-678" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <input type="tel" name="phone" placeholder="0912-345-678" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                 </div>
 
                 <!-- 與新人的關係 RELATIONSHIP -->
@@ -235,16 +235,15 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         與新人的關係 <span class="text-morandi-dark font-sans font-medium">RELATIONSHIP</span> <span class="text-rose-400">*</span>
                     </label>
-                    <select name="relationship" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <select name="relationship" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                         <option value="" disabled selected>請選擇您與新人的關係</option>
                         <option value="天霖的親戚">天霖的親戚</option>
                         <option value="天霖的同學">天霖的同學</option>
-                        <option value="天霖的同事">天霖的工作夥伴</option>
+                        <option value="天霖的同事">天霖的同事</option>
                         <option value="天霖的朋友">天霖的朋友</option>
                         <option value="莉庭的親戚">莉庭的親戚</option>
                         <option value="莉庭的同學">莉庭的同學</option>
-                        <option value="莉庭的同事">莉庭的工作夥伴</option>
-                        <option value="莉庭的同事">莉庭的健身夥伴</option>
+                        <option value="莉庭的同事">莉庭的同事</option>
                         <option value="莉庭的教會朋友">莉庭的教會朋友</option>
                         <option value="共同好友">共同好友</option>
                     </select>
@@ -255,7 +254,7 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         是否會出席婚宴 <span class="text-morandi-dark font-sans font-medium">ATTENDANCE</span> <span class="text-rose-400">*</span>
                     </label>
-                    <select id="attendance-select" name="attendance" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <select id="attendance-select" name="attendance" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                         <option value="" disabled selected>請選擇出席意願</option>
                         <option value="出席，絕對到場！">出席，絕對到場！</option>
                         <option value="無法出席，祝你們幸福美滿！">無法出席，祝你們幸福美滿！</option>
@@ -268,7 +267,7 @@
                     <label class="block text-xs font-en tracking-widest uppercase text-morandi-muted mb-2">
                         是否需要寄送喜帖 <span class="text-morandi-dark font-sans font-medium">INVITATION TYPE</span> <span class="text-rose-400">*</span>
                     </label>
-                    <select id="invitation-select" name="invitation_type" required class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
+                    <select id="invitation-select" name="invitation_type" class="w-full bg-morandi-cream border border-morandi-sand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-morandi-warm transition-colors">
                         <option value="" disabled selected>請選擇喜帖需求</option>
                         <option value="請寄「電子喜帖」給我">請寄「電子喜帖」給我</option>
                         <option value="請寄「紙本喜帖」給我">請寄「紙本喜帖」給我</option>
@@ -398,12 +397,10 @@
             const val = e.target.value;
             if (val === '出席，絕對到場！') {
                 guestsContainer.classList.remove('hidden');
-                attendeesInput.required = true;
                 attendeesInput.value = '1';
                 conditionalFields.classList.remove('hidden');
             } else {
                 guestsContainer.classList.add('hidden');
-                attendeesInput.required = false;
                 attendeesInput.value = '0';
                 conditionalFields.classList.add('hidden');
             }
@@ -429,30 +426,53 @@
             const val = e.target.value;
             if (val === '請寄「電子喜帖」給我') {
                 emailContainer.classList.remove('hidden');
-                emailInput.required = true;
                 addressContainer.classList.add('hidden');
-                addressInput.required = false;
                 addressInput.value = '';
-            } else if (val === '請寄「紙本喜帖」給我')  {
+            } else if (val === '請寄「紙本喜帖」給我') {
                 addressContainer.classList.remove('hidden');
-                addressInput.required = true;
                 emailContainer.classList.add('hidden');
-                emailInput.required = false;
                 emailInput.value = '';
             } else {
                 emailContainer.classList.add('hidden');
-                emailInput.required = false;
                 emailInput.value = '';
                 addressContainer.classList.add('hidden');
-                addressInput.required = false;
                 addressInput.value = '';
             }
         });
 
-        // 使用 Apps Script 網頁應用程式提交表單
+        // 使用 Apps Script 網頁應用程式提交表單 (含親友友好的 JS 手動驗證)
         const form = document.getElementById('rsvp-form');
         form.addEventListener('submit', function(e) {
             e.preventDefault();
+
+            // 1. 手動檢查必填欄位，如果沒填會直接跳彈窗提示
+            const name = form.name.value.trim();
+            const phone = form.phone.value.trim();
+            const relationship = form.relationship.value;
+            const attendance = form.attendance.value;
+            const invitationType = form.invitation_type.value;
+
+            if (!name) { alert("請填寫您的姓名喔！"); return; }
+            if (!phone) { alert("請填寫您的電話喔！"); return; }
+            if (!relationship) { alert("請選擇您與新人的關係喔！"); return; }
+            if (!attendance) { alert("請選擇是否出席婚宴喔！"); return; }
+            if (!invitationType) { alert("請選擇喜帖需求喔！"); return; }
+
+            // 動態條件檢查
+            if (invitationType === '請寄「電子喜帖」給我' && !emailInput.value.trim()) {
+                alert("請填寫接收電子喜帖的 Email 喔！");
+                return;
+            }
+            if (invitationType === '請寄「紙本喜帖」給我' && !addressInput.value.trim()) {
+                alert("請填寫紙本喜帖的收件地址喔！");
+                return;
+            }
+            if (attendance === '出席，絕對到場！' && (!attendeesInput.value || parseInt(attendeesInput.value) < 1)) {
+                alert("請填寫出席人數喔！");
+                return;
+            }
+
+            // 2. 驗證通過，執行送出
             const submitBtn = document.getElementById('submit-btn');
             submitBtn.disabled = true;
             submitBtn.innerText = '傳送中...';
